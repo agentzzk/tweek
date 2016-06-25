@@ -1,0 +1,164 @@
+$h1: 2rem;
+$h2: 1.2rem;
+$h3: 0.9rem;
+$para: 0.8rem;
+$buttonFont: 0.7rem;
+$navFont: 0.9rem;
+
+:root {
+    font-family: 'Lato', sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    @media(max-width: 930px) {
+        font-size: 20px;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+h1 {
+    font-size: $h1;
+    font-weight: 300;
+    margin: 1rem 0;
+}
+
+h2 {font-size: $h2;
+    font-weight: 300;
+    margin: 0.5em 0;}
+
+h3 {
+    font-size: $h3;
+    text-decoration: none;
+}
+
+p {
+    font-size: $para;
+}
+
+a {
+    font-size: $para;
+    text-decoration: none;
+}
+
+button, .button {
+    background-color: green + 50;
+    border: 0;
+    color: white;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    font-size: $para;
+    margin: 0.3rem 0;
+    padding: 0.5rem 0;
+    width: 3rem;
+
+    &:hover {
+        background: green + 30;
+    }
+
+    &.negate {
+        background: none;
+        color: red - 20;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+
+        &:hover {
+            color: red + 50;
+        }
+    }
+}
+
+body {
+    background-color: lightgrey + 23;
+    text-align: center;
+}
+
+nav {
+    background-color: #098ac1;
+    color: white;
+    font-weight: bold;
+    padding: 1rem 0;
+
+    p {
+        margin-right: 2rem;
+    }
+
+    ul > * {
+        display: inline-block;
+        list-style: none;
+        vertical-align: middle;
+        width: 6rem;
+
+        & > a {
+            color: white;
+            display: block;
+            padding: 0.5rem 0;
+            width: 100%;
+            height: 100%;
+            &:hover {
+                background-color: #098ac1 - 20;
+            }
+        }
+    }
+
+}
+
+.intro {
+    font-size: $h2;
+    max-width: 27rem;
+    margin: 1rem auto;
+}
+
+.flash {
+    background-color: orange - 15;
+    color: white;
+    font-weight: bold;
+    margin: 1rem auto;
+    max-width: 25rem;
+    padding: 1rem 0;
+}
+
+.search {
+    margin-bottom: 2rem;
+    p {
+        display: block;
+        margin: 1rem 5rem;
+    }
+    input[type="text"] {
+        border: 1px solid lightgrey;
+        display: inline-block;
+        font-size: $para;
+        margin: 0 1rem;
+        padding: 0.5rem;
+    }
+}
+
+.tweets {
+    max-width: 50rem;
+    display: inline-block;
+}
+
+.tweetContainer {
+    background-color: white;
+    border: 1px solid lightgrey;
+    display: inline-block;
+    margin: 0.5rem;
+    min-height: 6rem;
+    padding: 0 2rem;
+    width: 15rem;
+
+    img {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .subfeed {
+        margin: 1rem 0;
+        text-align: left;
+    }
+}

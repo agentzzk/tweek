@@ -1,0 +1,2 @@
+Fixes
+- Change primry key for Sub model, should be composite key to avoid duplications.
