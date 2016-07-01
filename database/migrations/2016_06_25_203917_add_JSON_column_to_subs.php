@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddLastFetchTimeColumn extends Migration
+class AddJSONColumnToSubs extends Migration
 {
     /**
      * Run the migrations.
@@ -12,8 +12,8 @@ class AddLastFetchTimeColumn extends Migration
      */
      public function up()
      {
-         Schema::table('users', function ($table) {
-             $table->dateTimeTz('last_API_fetch')->nullable();
+         Schema::table('subs', function ($table) {
+             $table->text('timeline')->nullable();
          });
      }
 
@@ -24,8 +24,8 @@ class AddLastFetchTimeColumn extends Migration
       */
      public function down()
      {
-         Schema::table('users', function ($table) {
-             $table->dropColumn('last_API_fetch');
+         Schema::table('subs', function ($table) {
+             $table->dropColumn('timeline');
          });
      }
 }

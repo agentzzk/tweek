@@ -12,7 +12,7 @@ class Sub extends Model
      * @var array
      */
     protected $fillable = [
-        'id', 'name', 'avatar'
+        'id', 'name', 'avatar', 'timeline'
     ];
 
     /**

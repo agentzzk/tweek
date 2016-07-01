@@ -13,9 +13,9 @@ class CreateSubUserPivotTable extends Migration
     public function up()
     {
         Schema::create('sub_user', function (Blueprint $table) {
-            $table->integer('sub_id')->unsigned()->index();
+            $table->bigInteger('sub_id')->unsigned()->index();
             $table->foreign('sub_id')->references('id')->on('subs')->onDelete('cascade');
-            $table->integer('user_id')->unsigned()->index();
+            $table->bigInteger('user_id')->unsigned()->index();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->primary(['sub_id', 'user_id']);
         });

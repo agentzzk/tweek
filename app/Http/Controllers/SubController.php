@@ -26,29 +26,36 @@ class SubController extends Controller
         $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, session('access_token'), session('access_token_secret'));
         $content = $connection->get("users/lookup", ["screen_name" => "$request->sub_name"]);
 
-        //check to see if sub already exists
-        if (!Auth::user()->subs()->find($content[0]->id) && (Auth::user()->id != $content[0]->id)) {
-            //check to see if handle exists, and then save, else show error
-            if (!array_key_exists('errors', $content)) {
-                $newSub->id = $content[0]->id;
-                $newSub->name = $content[0]->name;
-                //parse the avatar URL and remove "_normal" to get link to higher res picture
-                $pic = $content[0]->profile_image_url;
-                $pic = str_replace("_normal", "", $pic);
-                $newSub->avatar = $pic;
-                $newSub->save();
-                Auth::user()->subs()->attach($newSub->id);
-                session()->flash('alert', $content[0]->name.' has been added!');
+        //check to see if handle exists, and then save, else show error
+        if (!array_key_exists('errors', $content)) {
+            //check to see if sub already exists
+            if (!Auth::user()->subs()->find($content[0]->id) && (Auth::user()->id != $content[0]->id)) {
+                    $newSub->id = $content[0]->id;
+                    $newSub->name = $content[0]->name;
+                    //parse the avatar URL and remove "_normal" to get link to higher res picture
+                    $pic = $content[0]->profile_image_url;
+                    $pic = str_replace("_normal", "", $pic);
+                    $newSub->avatar = $pic;
+
+                    //update tweets of sub
+                    $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, session('access_token'), session('access_token_secret'));
+                    $tweetFeed = $connection->get("statuses/user_timeline", ['user_id' => $content[0]->id, 'exclude_replies' => 1, 'count' => 10]);
+                    $newSub->timeline = json_encode($tweetFeed);
+
+                    //save everything
+                    $newSub->save();
+                    Auth::user()->subs()->attach($newSub->id);
+                    session()->flash('alert-green', $content[0]->name.' has been added!');
+            }
+            else if (Auth::user()->id == $content[0]->id) {
+                session()->flash('alert-red', 'Nice try adding yourself.');
             }
             else {
-                session()->flash('alert', $request->sub_name.' could not be added.');
+                session()->flash('alert', $request->sub_name.' is already added.');
             }
         }
-        else if (Auth::user()->id == $content[0]->id) {
-            session()->flash('alert', 'Nice try adding yourself.');
-        }
         else {
-            session()->flash('alert', $request->sub_name.' is already added.');
+            session()->flash('alert-red', $request->sub_name.' could not be added.');
         }
 
         return redirect()->route('app.home');

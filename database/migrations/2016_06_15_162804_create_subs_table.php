@@ -13,7 +13,7 @@ class CreateSubsTable extends Migration
     public function up()
     {
         Schema::create('subs', function (Blueprint $table) {
-            $table->integer('id')->unique();
+            $table->bigInteger('id')->unique();
             $table->timestamps();
         });
     }

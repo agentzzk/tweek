@@ -22,12 +22,22 @@
                 <p>{{ session('alert') }}</p>
             </div>
             @endif
+            @if (session('alert-green'))
+            <div class="flash green">
+                <p>{{ session('alert-green') }}</p>
+            </div>
+            @endif
+            @if (session('alert-red'))
+            <div class="flash red">
+                <p>{{ session('alert-red') }}</p>
+            </div>
+            @endif
 
         <div class="search">
             <h2>Start a list by searching for users:</h2>
             {!! Form::open(array('route' => 'add.sub')) !!}
             {{ csrf_field() }}
-            {!! Form::text('sub_name') !!}
+            {!! '@'.Form::text('sub_name') !!}
             {!! Form::button('Add', ['type' => 'submit']) !!}
             {!! Form::close() !!}
         </div>
@@ -39,10 +49,13 @@
                 <h2>{{ $sub->name }}</h2>
                 <img src="{{ $sub->avatar }}">
                 <div class="subfeed">
-                    Tweets<br>
-                    @if ($sub->last_API_fetch == null)
-                        dd('works');
+                    @if (Auth::user()->last_API_fetch == null)
+                        <p>Last updated at: {{ Auth::user()->last_API_fetch }}</p>
                     @endif
+                    @for ($i = 0; $i < sizeOf(json_decode($sub->timeline)); $i++)
+                        <p>{{ json_decode($sub->timeline)[$i]->text }}</p>
+                        <br>
+                    @endfor
                 </div>
             </div>
         </div>
