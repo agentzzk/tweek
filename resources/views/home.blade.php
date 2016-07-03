@@ -45,16 +45,18 @@
         <div class="tweets">
             @foreach ($subs as $sub)
             <div class='tweetContainer'>
-                <a class="button negate" href="{{ route('delete.sub', $sub) }}">Remove</a>
-                <h2>{{ $sub->name }}</h2>
-                <img src="{{ $sub->avatar }}">
-                <div class="subfeed">
-                    @if (Auth::user()->last_API_fetch == null)
-                        <p>Last updated at: {{ Auth::user()->last_API_fetch }}</p>
-                    @endif
+                <div class="info">
+                    <a class="button negate" href="{{ route('delete.sub', $sub) }}">Remove</a>
+                    <h2>{{ $sub->name }}</h2>
+                    <img src="{{ $sub->avatar }}">
+                    <p class="tiny">Last updated: {{ Carbon\Carbon::parse(Auth::user()->last_API_fetch)->toDayDateTimeString() }}</p>
+                </div>
+                <div class="feed">
                     @for ($i = 0; $i < sizeOf(json_decode($sub->timeline)); $i++)
-                        <p>{{ json_decode($sub->timeline)[$i]->text }}</p>
-                        <br>
+                        <div class="tweet">
+                            <p class="text">{{ json_decode($sub->timeline)[$i]->text }}</p>
+                            <p class="tiny">{{ date('H:i, M d', strtotime(json_decode($sub->timeline)[$i]->created_at)) }}</p>
+                        </div>
                     @endfor
                 </div>
             </div>

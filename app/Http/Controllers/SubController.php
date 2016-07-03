@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\User;
 use App\Sub;
 use Auth;
+use Carbon\Carbon;
 
 class SubController extends Controller
 {
@@ -30,21 +31,28 @@ class SubController extends Controller
         if (!array_key_exists('errors', $content)) {
             //check to see if sub already exists
             if (!Auth::user()->subs()->find($content[0]->id) && (Auth::user()->id != $content[0]->id)) {
-                    $newSub->id = $content[0]->id;
-                    $newSub->name = $content[0]->name;
-                    //parse the avatar URL and remove "_normal" to get link to higher res picture
-                    $pic = $content[0]->profile_image_url;
-                    $pic = str_replace("_normal", "", $pic);
-                    $newSub->avatar = $pic;
+                    //check to see if sub already in database
+                    if (Sub::find($content[0]->id)) {
+                        $newSub = Sub::find($content[0]->id);
+                    }
+                    else {
+                        $newSub->id = $content[0]->id;
+                        $newSub->name = $content[0]->name;
+                        //parse the avatar URL and remove "_normal" to get link to higher res picture
+                        $pic = $content[0]->profile_image_url;
+                        $pic = str_replace("_normal", "", $pic);
+                        $newSub->avatar = $pic;
+                    }
 
                     //update tweets of sub
-                    $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, session('access_token'), session('access_token_secret'));
-                    $tweetFeed = $connection->get("statuses/user_timeline", ['user_id' => $content[0]->id, 'exclude_replies' => 1, 'count' => 10]);
+                    $tweetFeed = $connection->get("statuses/user_timeline", ['user_id' => $content[0]->id, 'exclude_replies' => 0, 'count' => 5]);
                     $newSub->timeline = json_encode($tweetFeed);
+                    Auth::user()->last_API_fetch = Carbon::now();
 
                     //save everything
                     $newSub->save();
                     Auth::user()->subs()->attach($newSub->id);
+                    Auth::user()->save();
                     session()->flash('alert-green', $content[0]->name.' has been added!');
             }
             else if (Auth::user()->id == $content[0]->id) {

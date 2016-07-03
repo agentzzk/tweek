@@ -53,7 +53,7 @@ class User extends Authenticatable
      */
 
     public function checkUpdate() {
-        if (Carbon::now()->diffInMinutes(Auth::user()->last_API_fetch) >= 1)
+        if (Carbon::now()->diffInMinutes(Carbon::parse(Auth::user()->last_API_fetch)) >= 1)
             return true;
         else
             return false;
@@ -68,4 +68,18 @@ class User extends Authenticatable
     public function getUpdate() {
 
     }
+
+    // /**
+    //  * Create a new Twitter API connection
+    //  *
+    //  * @return API connection
+    //  */
+    //
+    // public function makeAPIConnection() {
+    //     define('CONSUMER_KEY', getenv('CONSUMER_KEY'));
+    //     define('CONSUMER_SECRET', getenv('CONSUMER_SECRET'));
+    //     define('OAUTH_CALLBACK', getenv('OAUTH_CALLBACK'));
+    //     $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, session('access_token'), session('access_token_secret'));
+    //     return $connection
+    // }
 }

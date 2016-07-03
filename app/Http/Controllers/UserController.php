@@ -23,15 +23,17 @@ class UserController extends Controller
         // Update all tweets
         if (Auth::user()->checkUpdate()) {
             //define the Twitter API parameters, and establish connection
-            // define('CONSUMER_KEY', getenv('CONSUMER_KEY'));
-            // define('CONSUMER_SECRET', getenv('CONSUMER_SECRET'));
-            // define('OAUTH_CALLBACK', getenv('OAUTH_CALLBACK'));
-            // $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, session('access_token'), session('access_token_secret'));
-            dd(Carbon::now()->diffInMinutes(Auth::user()->last_API_fetch));
-            foreach (Auth::user()->subs as $sub) {
+            define('CONSUMER_KEY', getenv('CONSUMER_KEY'));
+            define('CONSUMER_SECRET', getenv('CONSUMER_SECRET'));
+            define('OAUTH_CALLBACK', getenv('OAUTH_CALLBACK'));
+            $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, session('access_token'), session('access_token_secret'));
+            foreach ($parse['subs'] as $sub) {
+                $tweetFeed = $connection->get("statuses/user_timeline", ['user_id' => $sub->id, 'exclude_replies' => 0, 'count' => 5]);
+                $sub->timeline = json_encode($tweetFeed);
+                $sub->save();
             }
-            //$content = $connection->get("statuses/user_timeline");
             Auth::user()->last_API_fetch = Carbon::now();
+            Auth::user()->save();
         }
 
         return view('home', $parse);

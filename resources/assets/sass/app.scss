@@ -9,8 +9,14 @@ $navFont: 0.9rem;
     font-family: 'Lato', sans-serif;
     font-size: 25px;
     font-weight: 500;
-    @media(max-width: 930px) {
+    @media(max-width: 1025px) {
         font-size: 20px;
+
+        .tweetContainer {
+            width: 16rem;
+            box-shadow: none;
+            margin: 0 0.25rem;
+        }
     }
 }
 
@@ -146,26 +152,47 @@ nav {
 }
 
 .tweets {
-    max-width: 50rem;
     display: inline-block;
 }
 
 .tweetContainer {
     background-color: white;
     border: 1px solid lightgrey;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     display: inline-block;
-    margin: 0.5rem;
+    margin: 0 1rem;
+    margin-bottom: 1rem;
+    padding-top: 0.5rem;
     min-height: 6rem;
-    padding: 0 2rem;
-    width: 15rem;
+    vertical-align: top;
+    width: 18rem;
 
     img {
         width: 5rem;
         height: 5rem;
     }
 
-    .subfeed {
-        margin: 1rem 0;
+    .tiny {
+        font-size: 0.5rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .info {
+        padding-bottom: 1rem;
+
+    }
+
+    .feed {
         text-align: left;
+    }
+
+    .tweet {
+        background-color: lightgrey + 35;
+        border-top: 1px solid lightgrey;
+
+        .text {
+            font-size: 0.7rem;
+            padding: 0.5rem 1rem;
+        }
     }
 }
