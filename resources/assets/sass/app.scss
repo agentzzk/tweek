@@ -165,7 +165,7 @@ nav {
     padding-top: 0.5rem;
     min-height: 6rem;
     vertical-align: top;
-    width: 18rem;
+    width: 20rem;
 
     img {
         width: 5rem;
@@ -173,8 +173,9 @@ nav {
     }
 
     .tiny {
-        font-size: 0.5rem;
-        padding: 0.5rem 1rem;
+        font-size: 0.48rem;
+        font-weight: 700;
+        padding: 0.25rem 1rem;
     }
 
     .info {
@@ -186,13 +187,23 @@ nav {
         text-align: left;
     }
 
-    .tweet {
-        background-color: lightgrey + 35;
-        border-top: 1px solid lightgrey;
-
-        .text {
-            font-size: 0.7rem;
-            padding: 0.5rem 1rem;
+    a {
+        &:visited, &:link, &:active {
+            color: black;
         }
+        .tweet {
+            background-color: lightgrey + 35;
+            border-top: 1px solid lightgrey;
+
+            .text {
+                font-size: 0.6rem;
+                padding: 0.3rem 1rem;
+            }
+
+            &:hover {
+                background-color: lightgrey + 20;
+            }
+        }
+
     }
 }

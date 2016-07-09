@@ -53,10 +53,10 @@
                 </div>
                 <div class="feed">
                     @for ($i = 0; $i < sizeOf(json_decode($sub->timeline)); $i++)
-                        <div class="tweet">
+                        <a target="_blank" href="http://twitter.com/{{ Auth::user()->handle }}/status/{{ json_decode($sub->timeline)[$i]->id }}"><div class="tweet">
                             <p class="text">{{ json_decode($sub->timeline)[$i]->text }}</p>
                             <p class="tiny">{{ date('H:i, M d', strtotime(json_decode($sub->timeline)[$i]->created_at)) }}</p>
-                        </div>
+                        </div></a>
                     @endfor
                 </div>
             </div>

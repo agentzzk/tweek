@@ -16,7 +16,8 @@ Route::get('/', function () {
    if(Auth::check()) {
        return Redirect::to('/app');
    }
-   return view('welcome');
+    session()->flush();
+    return view('welcome');
 });
 
 //twitter auth

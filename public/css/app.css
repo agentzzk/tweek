@@ -125,22 +125,27 @@ nav {
   padding-top: 0.5rem;
   min-height: 6rem;
   vertical-align: top;
-  width: 18rem; }
+  width: 20rem; }
   .tweetContainer img {
     width: 5rem;
     height: 5rem; }
   .tweetContainer .tiny {
-    font-size: 0.5rem;
-    padding: 0.5rem 1rem; }
+    font-size: 0.48rem;
+    font-weight: 700;
+    padding: 0.25rem 1rem; }
   .tweetContainer .info {
     padding-bottom: 1rem; }
   .tweetContainer .feed {
     text-align: left; }
-  .tweetContainer .tweet {
+  .tweetContainer a:visited, .tweetContainer a:link, .tweetContainer a:active {
+    color: black; }
+  .tweetContainer a .tweet {
     background-color: #f6f6f6;
     border-top: 1px solid lightgrey; }
-    .tweetContainer .tweet .text {
-      font-size: 0.7rem;
-      padding: 0.5rem 1rem; }
+    .tweetContainer a .tweet .text {
+      font-size: 0.6rem;
+      padding: 0.3rem 1rem; }
+    .tweetContainer a .tweet:hover {
+      background-color: #e7e7e7; }
 
 /*# sourceMappingURL=app.css.map */
