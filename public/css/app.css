@@ -100,7 +100,7 @@ nav {
     background-color: #32b232; }
 
 .search {
-  margin-bottom: 2rem; }
+  margin-bottom: 1rem; }
   .search p {
     display: block;
     margin: 1rem 5rem; }
@@ -111,6 +111,14 @@ nav {
     margin-right: 1rem;
     margin-left: 0.2rem;
     padding: 0.5rem; }
+
+.options {
+  margin-bottom: 1rem; }
+  .options ul > * {
+    display: inline-block;
+    list-style: none;
+    vertical-align: middle;
+    width: 5rem; }
 
 .tweets {
   display: inline-block; }

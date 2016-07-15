@@ -19,6 +19,7 @@ class UserController extends Controller
 
     public function home() {
         $parse['subs'] = Auth::user()->subs;
+        $parse['viewStyle'] = Auth::user()->viewStyle;
 
         // Update all tweets
         if (Auth::user()->checkUpdate()) {
@@ -39,13 +40,18 @@ class UserController extends Controller
         return view('home', $parse);
     }
 
-    public function testing() {
-        //define the Twitter API parameters, and establish connection
-        define('CONSUMER_KEY', getenv('CONSUMER_KEY'));
-        define('CONSUMER_SECRET', getenv('CONSUMER_SECRET'));
-        define('OAUTH_CALLBACK', getenv('OAUTH_CALLBACK'));
-        $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, session('access_token'), session('access_token_secret'));
-        $content = $connection->get("statuses/user_timeline");
-        dd($content);
+    public function updateSettings($option) {
+        if ($option = 'unify') {
+            Auth::user()->viewStyle = 'u';
+        }
+        elseif ($option = 'split') {
+            Auth::user()->viewStyle = 's';
+        }
+        else {
+            Auth::user()->viewStyle = 's';
+        }
+        Auth::user()->save();
+
+        return redirect()->route('app.home');
     }
 }

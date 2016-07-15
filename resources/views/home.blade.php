@@ -42,25 +42,36 @@
             {!! Form::close() !!}
         </div>
 
-        <div class="tweets">
-            @foreach ($subs as $sub)
-            <div class='tweetContainer'>
-                <div class="info">
-                    <a class="button negate" href="{{ route('delete.sub', $sub) }}">Remove</a>
-                    <h2>{{ $sub->name }}</h2>
-                    <img src="{{ $sub->avatar }}">
-                    <p class="tiny">Last updated: {{ Carbon\Carbon::parse(Auth::user()->last_API_fetch)->toDayDateTimeString() }}</p>
-                </div>
-                <div class="feed">
-                    @for ($i = 0; $i < sizeOf(json_decode($sub->timeline)); $i++)
-                        <a target="_blank" href="http://twitter.com/{{ Auth::user()->handle }}/status/{{ json_decode($sub->timeline)[$i]->id }}"><div class="tweet">
-                            <p class="text">{{ json_decode($sub->timeline)[$i]->text }}</p>
-                            <p class="tiny">{{ date('H:i, M d', strtotime(json_decode($sub->timeline)[$i]->created_at)) }}</p>
-                        </div></a>
-                    @endfor
-                </div>
-            </div>
+        <div class="options">
+            <ul>
+                <li><p>View style:</p></li>
+                <li><p><a href="{{ route('update.settings', 'unify') }}">Unify</a></p></li>
+                <li><p><a href="{{ route('update.settings', 'split') }}">Split</a></p></li>
+            </ul>
         </div>
-        @endforeach
+        {{ dd($viewStyle) }}
+        <div class="tweets">
+            @if ($viewStyle == 's')
+                @foreach ($subs as $sub)
+                    <div class='tweetContainer'>
+                        <div class="info">
+                            <a class="button negate" href="{{ route('delete.sub', $sub) }}">Remove</a>
+                            <h2>{{ $sub->name }}</h2>
+                            <img src="{{ $sub->avatar }}">
+                            <p class="tiny">Last updated: {{ Carbon\Carbon::parse(Auth::user()->last_API_fetch)->toDayDateTimeString() }}</p>
+                        </div>
+                        <div class="feed">
+                            @for ($i = 0; $i < sizeOf(json_decode($sub->timeline)); $i++)
+                                <a target="_blank" href="http://twitter.com/{{ Auth::user()->handle }}/status/{{ json_decode($sub->timeline)[$i]->id }}"><div class="tweet">
+                                    <p class="text">{{ json_decode($sub->timeline)[$i]->text }}</p>
+                                    <p class="tiny">{{ date('H:i, M d', strtotime(json_decode($sub->timeline)[$i]->created_at)) }}</p>
+                                </div></a>
+                            @endfor
+                        </div>
+                    </div>
+                @endforeach
+            @else
+            @endif
+        </div>
     </body>
 </html>

@@ -31,7 +31,10 @@ Route::group(['prefix' => '/app', 'middleware' => 'auth'], function () {
     Route::get('/', 'UserController@home')->name('app.home');
     Route::get('/testing', 'UserController@testing');
 
-    Route::resource('/sub', 'SubController');
-    Route::post('/sub/addSub', 'SubController@store')->name('add.sub');
     Route::get('/sub/deletesub/{sub}', 'SubController@delete')->name('delete.sub');
+    Route::post('/sub/addSub', 'SubController@store')->name('add.sub');
+    Route::resource('/sub', 'SubController');
+
+    Route::get('/user/updateSettings/{option}', 'UserController@updateSettings')->name('update.settings');
+    Route::resource('/user', 'UserController');
 });

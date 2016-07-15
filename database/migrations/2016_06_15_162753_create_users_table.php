@@ -16,6 +16,7 @@ class CreateUsersTable extends Migration
             $table->bigInteger('id')->unique();
             $table->string('handle')->unique();
             $table->string('access_token')->unique();
+            $table->char('viewStyle', 1)->default('s');
             $table->rememberToken();
             $table->timestamps();
         });
