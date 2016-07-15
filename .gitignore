@@ -5,4 +5,5 @@
 Homestead.yaml
 Homestead.json
 .env
-sync-twitApp
+sync-twitAp
+/public/css/*.map

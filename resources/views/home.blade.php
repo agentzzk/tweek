@@ -44,14 +44,17 @@
 
         <div class="options">
             <ul>
-                <li><p>View style:</p></li>
-                <li><p><a href="{{ route('update.settings', 'unify') }}">Unify</a></p></li>
-                <li><p><a href="{{ route('update.settings', 'split') }}">Split</a></p></li>
+                @if ($viewStyle == "s")
+                    <li><p><a href="{{ route('update.settings', 'unify') }}">Unify</a></p></li>
+                    <li><p><strong><a>Split</a></strong></p></li>
+                @elseif ($viewStyle == "u")
+                    <li><p><strong><a>Unify</a></strong></p></li>
+                    <li><p><a href="{{ route('update.settings', 'split') }}">Split</a></p></li>
+                @endif
             </ul>
         </div>
-        {{ dd($viewStyle) }}
         <div class="tweets">
-            @if ($viewStyle == 's')
+            @if ($viewStyle == "s")
                 @foreach ($subs as $sub)
                     <div class='tweetContainer'>
                         <div class="info">
@@ -70,7 +73,6 @@
                         </div>
                     </div>
                 @endforeach
-            @else
             @endif
         </div>
     </body>

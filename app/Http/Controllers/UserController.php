@@ -41,10 +41,10 @@ class UserController extends Controller
     }
 
     public function updateSettings($option) {
-        if ($option = 'unify') {
+        if ($option == 'unify') {
             Auth::user()->viewStyle = 'u';
         }
-        elseif ($option = 'split') {
+        elseif ($option == 'split') {
             Auth::user()->viewStyle = 's';
         }
         else {
