@@ -45,7 +45,7 @@ class SubController extends Controller
                     }
 
                     //update tweets of sub
-                    $tweetFeed = $connection->get("statuses/user_timeline", ['user_id' => $content[0]->id, 'exclude_replies' => 0, 'count' => 5]);
+                    $tweetFeed = $connection->get("statuses/user_timeline", ['user_id' => $content[0]->id, 'exclude_replies' => 0, 'count' => 7]);
                     $newSub->timeline = json_encode($tweetFeed);
                     Auth::user()->last_API_fetch = Carbon::now();
 

@@ -73,6 +73,15 @@
                         </div>
                     </div>
                 @endforeach
+            @else
+                @foreach ($utweets as $tweet)
+                    <div class="feed">
+                        <a target="_blank" href="http://twitter.com/{{ Auth::user()->handle }}/status/{{ $tweet->id }}"><div class="tweet">
+                                <p class="text">{{ $tweet->text }}</p>
+                                <p class="tiny">{{ date('H:i, M d', strtotime($tweet->created_at)) }}</p>
+                            </div></a>
+                    </div>
+                @endforeach
             @endif
         </div>
     </body>
