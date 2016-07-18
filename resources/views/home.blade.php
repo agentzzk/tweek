@@ -56,7 +56,7 @@
         <div class="tweets">
             @if ($viewStyle == "s")
                 @foreach ($subs as $sub)
-                    <div class='tweetContainer'>
+                    <div class='tweetContainerS'>
                         <div class="info">
                             <a class="button negate" href="{{ route('delete.sub', $sub) }}">Remove</a>
                             <h2>{{ $sub->name }}</h2>
@@ -74,14 +74,17 @@
                     </div>
                 @endforeach
             @else
-                @foreach ($utweets as $tweet)
-                    <div class="feed">
-                        <a target="_blank" href="http://twitter.com/{{ Auth::user()->handle }}/status/{{ $tweet->id }}"><div class="tweet">
-                                <p class="text">{{ $tweet->text }}</p>
-                                <p class="tiny">{{ date('H:i, M d', strtotime($tweet->created_at)) }}</p>
-                            </div></a>
-                    </div>
-                @endforeach
+                <div class='tweetContainerU'>
+                    @foreach ($utweets as $tweet)
+                        <div class="feed">
+                            <p>{{ (App\Sub::find($tweet->user->id))->name }}</p>
+                            <a target="_blank" href="http://twitter.com/{{ Auth::user()->handle }}/status/{{ $tweet->id }}"><div class="tweet">
+                                    <p class="text">{{ $tweet->text }}</p>
+                                    <p class="tiny">{{ date('H:i, M d', strtotime($tweet->created_at)) }}</p>
+                                </div></a>
+                        </div>
+                    @endforeach
+                <div>
             @endif
         </div>
     </body>

@@ -165,7 +165,55 @@ nav {
     display: inline-block;
 }
 
-.tweetContainer {
+.tweetContainerU {
+    background-color: white;
+    border-left: 1px solid lightgrey;
+    border-right: 1px solid lightgrey;
+    margin: 0 auto;
+
+    img {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .tiny {
+        font-size: 0.48rem;
+        font-weight: 700;
+        padding: 0.25rem 1rem;
+    }
+
+    .info {
+        padding-bottom: 1rem;
+
+    }
+
+    .feed {
+        text-align: left;
+    }
+
+    a {
+        &:visited, &:link, &:active {
+            color: black;
+        }
+        .tweet {
+            background-color: lightgrey + 35;
+            border-top: 1px solid lightgrey;
+            min-height: 3rem;
+
+            .text {
+                font-size: 0.6rem;
+                padding: 0.3rem 1rem;
+            }
+
+            &:hover {
+                background-color: lightgrey + 20;
+            }
+        }
+
+    }
+}
+
+.tweetContainerS {
     background-color: white;
     border: 1px solid lightgrey;
     box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);

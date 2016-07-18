@@ -123,7 +123,35 @@ nav {
 .tweets {
   display: inline-block; }
 
-.tweetContainer {
+.tweetContainerU {
+  background-color: white;
+  border-left: 1px solid lightgrey;
+  border-right: 1px solid lightgrey;
+  margin: 0 auto; }
+  .tweetContainerU img {
+    width: 5rem;
+    height: 5rem; }
+  .tweetContainerU .tiny {
+    font-size: 0.48rem;
+    font-weight: 700;
+    padding: 0.25rem 1rem; }
+  .tweetContainerU .info {
+    padding-bottom: 1rem; }
+  .tweetContainerU .feed {
+    text-align: left; }
+  .tweetContainerU a:visited, .tweetContainerU a:link, .tweetContainerU a:active {
+    color: black; }
+  .tweetContainerU a .tweet {
+    background-color: #f6f6f6;
+    border-top: 1px solid lightgrey;
+    min-height: 3rem; }
+    .tweetContainerU a .tweet .text {
+      font-size: 0.6rem;
+      padding: 0.3rem 1rem; }
+    .tweetContainerU a .tweet:hover {
+      background-color: #e7e7e7; }
+
+.tweetContainerS {
   background-color: white;
   border: 1px solid lightgrey;
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -134,26 +162,26 @@ nav {
   min-height: 6rem;
   vertical-align: top;
   width: 20rem; }
-  .tweetContainer img {
+  .tweetContainerS img {
     width: 5rem;
     height: 5rem; }
-  .tweetContainer .tiny {
+  .tweetContainerS .tiny {
     font-size: 0.48rem;
     font-weight: 700;
     padding: 0.25rem 1rem; }
-  .tweetContainer .info {
+  .tweetContainerS .info {
     padding-bottom: 1rem; }
-  .tweetContainer .feed {
+  .tweetContainerS .feed {
     text-align: left; }
-  .tweetContainer a:visited, .tweetContainer a:link, .tweetContainer a:active {
+  .tweetContainerS a:visited, .tweetContainerS a:link, .tweetContainerS a:active {
     color: black; }
-  .tweetContainer a .tweet {
+  .tweetContainerS a .tweet {
     background-color: #f6f6f6;
     border-top: 1px solid lightgrey; }
-    .tweetContainer a .tweet .text {
+    .tweetContainerS a .tweet .text {
       font-size: 0.6rem;
       padding: 0.3rem 1rem; }
-    .tweetContainer a .tweet:hover {
+    .tweetContainerS a .tweet:hover {
       background-color: #e7e7e7; }
 
 /*# sourceMappingURL=app.css.map */
