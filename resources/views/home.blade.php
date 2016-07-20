@@ -77,7 +77,7 @@
                 <div class='tweetContainerU'>
                     @foreach ($utweets as $tweet)
                         <div class="feed">
-                            <p>{{ (App\Sub::find($tweet->user->id))->name }}</p>
+                            <a target="_blank" href="http://twitter.com/{{ (App\Sub::find($tweet->user->id))->name }}"><p>{{ (App\Sub::find($tweet->user->id))->name }}</p></a>
                             <a target="_blank" href="http://twitter.com/{{ Auth::user()->handle }}/status/{{ $tweet->id }}"><div class="tweet">
                                     <p class="text">{{ $tweet->text }}</p>
                                     <p class="tiny">{{ date('H:i, M d', strtotime($tweet->created_at)) }}</p>
