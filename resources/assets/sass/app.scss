@@ -25,16 +25,17 @@ $navFont: 0.9rem;
     padding: 0;
 }
 
-
 h1 {
     font-size: $h1;
     font-weight: 300;
     margin: 1rem 0;
 }
 
-h2 {font-size: $h2;
+h2 {
+    font-size: $h2;
     font-weight: 300;
-    margin: 0.5em 0;}
+    margin: 0.5em 0;
+}
 
 h3 {
     font-size: $h3;
@@ -166,50 +167,54 @@ nav {
 }
 
 .tweetContainerU {
-    background-color: white;
-    border-left: 1px solid lightgrey;
-    border-right: 1px solid lightgrey;
     margin: 0 auto;
+    max-width: 30rem;
 
-    img {
-        width: 5rem;
-        height: 5rem;
-    }
+    .tweet {
+        padding: 0.5rem 0;
 
-    .tiny {
-        font-size: 0.48rem;
-        font-weight: 700;
-        padding: 0.25rem 1rem;
-    }
-
-    .info {
-        padding-bottom: 1rem;
-
-    }
-
-    .feed {
-        text-align: left;
-    }
-
-    a {
-        &:visited, &:link, &:active {
-            color: black;
-        }
-        .tweet {
-            background-color: lightgrey + 35;
-            border-top: 1px solid lightgrey;
-            min-height: 3rem;
-
-            .text {
-                font-size: 0.6rem;
-                padding: 0.3rem 1rem;
-            }
-
-            &:hover {
-                background-color: lightgrey + 20;
+        .imageDiv {
+            img {
+                float: left;
+                max-width: 14%;
             }
         }
 
+        .contentDiv {
+            float: right;
+            width: 86%;
+            text-align: left;
+
+            .tiny {
+                font-size: 0.48rem;
+                font-weight: 700;
+                padding: 0.25rem 1rem;
+            }
+
+            a {
+                &:visited, &:link, &:active {
+                    color: black;
+                }
+                .tweet {
+                    background-color: lightgrey + 35;
+                    min-height: 3rem;
+
+                    .text {
+                        font-size: 0.6rem;
+                        padding: 0.3rem 1rem;
+                    }
+
+                    &:hover {
+                        background-color: lightgrey + 20;
+                    }
+                }
+
+            }
+        }
+
+        .clear {
+            clear: both;
+        }
     }
 }
 

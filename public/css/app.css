@@ -124,32 +124,33 @@ nav {
   display: inline-block; }
 
 .tweetContainerU {
-  background-color: white;
-  border-left: 1px solid lightgrey;
-  border-right: 1px solid lightgrey;
-  margin: 0 auto; }
-  .tweetContainerU img {
-    width: 5rem;
-    height: 5rem; }
-  .tweetContainerU .tiny {
-    font-size: 0.48rem;
-    font-weight: 700;
-    padding: 0.25rem 1rem; }
-  .tweetContainerU .info {
-    padding-bottom: 1rem; }
-  .tweetContainerU .feed {
-    text-align: left; }
-  .tweetContainerU a:visited, .tweetContainerU a:link, .tweetContainerU a:active {
-    color: black; }
-  .tweetContainerU a .tweet {
-    background-color: #f6f6f6;
-    border-top: 1px solid lightgrey;
-    min-height: 3rem; }
-    .tweetContainerU a .tweet .text {
-      font-size: 0.6rem;
-      padding: 0.3rem 1rem; }
-    .tweetContainerU a .tweet:hover {
-      background-color: #e7e7e7; }
+  margin: 0 auto;
+  max-width: 30rem; }
+  .tweetContainerU .tweet {
+    padding: 0.5rem 0; }
+    .tweetContainerU .tweet .imageDiv img {
+      float: left;
+      max-width: 14%; }
+    .tweetContainerU .tweet .contentDiv {
+      float: right;
+      width: 86%;
+      text-align: left; }
+      .tweetContainerU .tweet .contentDiv .tiny {
+        font-size: 0.48rem;
+        font-weight: 700;
+        padding: 0.25rem 1rem; }
+      .tweetContainerU .tweet .contentDiv a:visited, .tweetContainerU .tweet .contentDiv a:link, .tweetContainerU .tweet .contentDiv a:active {
+        color: black; }
+      .tweetContainerU .tweet .contentDiv a .tweet {
+        background-color: #f6f6f6;
+        min-height: 3rem; }
+        .tweetContainerU .tweet .contentDiv a .tweet .text {
+          font-size: 0.6rem;
+          padding: 0.3rem 1rem; }
+        .tweetContainerU .tweet .contentDiv a .tweet:hover {
+          background-color: #e7e7e7; }
+    .tweetContainerU .tweet .clear {
+      clear: both; }
 
 .tweetContainerS {
   background-color: white;
