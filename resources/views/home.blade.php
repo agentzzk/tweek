@@ -6,8 +6,24 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,500" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
 
+    {{-- Emoji support by Twitter --}}
+    <script src="//twemoji.maxcdn.com/twemoji.min.js"></script>
+
 </head>
 <body>
+<script>
+    window.onload = function() {
+
+        // Set the size of the rendered Emojis
+        // This can be set to 16x16, 36x36, or 72x72
+        twemoji.size = '72x72';
+
+        // Parse the document body and
+        // insert <img> tags in place of Unicode Emojis
+        twemoji.parse(document.body);
+
+    }
+</script>
 <nav>
     <ul>
         <p>Signed In as: {{'@'.Auth::user()->handle }}</p>
@@ -97,8 +113,8 @@
                     <div class="clear"></div>
                 </div>
             @endforeach
-            <div>
-                @endif
-            </div>
+        </div>
+    @endif
+</div>
 </body>
 </html>

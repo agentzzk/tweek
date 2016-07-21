@@ -1,7 +1,7 @@
 $h1: 2rem;
 $h2: 1.2rem;
 $h3: 0.9rem;
-$para: 0.8rem;
+$para: 0.7rem;
 $buttonFont: 0.7rem;
 $navFont: 0.9rem;
 
@@ -89,7 +89,7 @@ nav {
     background-color: #098ac1;
     color: white;
     font-weight: bold;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
 
     p {
         margin-right: 2rem;
@@ -115,6 +115,13 @@ nav {
 
 }
 
+img.emoji {
+    display: inline;
+    margin: 0 2px;
+    max-width: 0.85rem;
+    max-height: 0.85rem;
+}
+
 .intro {
     font-size: $h2;
     max-width: 27rem;
@@ -137,7 +144,7 @@ nav {
 }
 
 .search {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     p {
         display: block;
         margin: 1rem 5rem;
@@ -200,7 +207,7 @@ nav {
                     min-height: 3rem;
 
                     .text {
-                        font-size: 0.6rem;
+                        font-size: $para;
                         padding: 0.3rem 1rem;
                     }
 
@@ -259,7 +266,7 @@ nav {
             border-top: 1px solid lightgrey;
 
             .text {
-                font-size: 0.6rem;
+                font-size: $para;
                 padding: 0.3rem 1rem;
             }
 
