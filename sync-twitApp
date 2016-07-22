@@ -1,3 +1,0 @@
-#!/bin/bash
-
-rsync -acv --delete-before /srv/wwwroot/gatewayiq/twitApp/ /run/media/coop1/KINGSTON/projects/twitApp

@@ -1,20 +1,21 @@
+$buttonFont: 0.7rem;
 $h1: 2rem;
 $h2: 1.2rem;
 $h3: 0.9rem;
-$para: 0.7rem;
-$buttonFont: 0.7rem;
 $navFont: 0.9rem;
+$para: 0.7rem;
 
 :root {
     font-family: 'Lato', sans-serif;
     font-size: 25px;
     font-weight: 500;
+
     @media(max-width: 1025px) {
         font-size: 20px;
 
         .tweetContainerS {
-            width: 18.5rem;
             margin: 0.3rem;
+            width: 18.5rem;
         }
     }
     @media(max-width: 400px) {
@@ -63,9 +64,8 @@ button, .button {
     border: 0;
     color: white;
     display: inline-block;
-    width: 100%;
-    height: 100%;
     font-size: $para;
+    height: 100%;
     margin: 0.3rem 0;
     padding: 0.5rem 0;
     width: 3rem;
@@ -73,7 +73,6 @@ button, .button {
     &:hover {
         background: green + 30;
     }
-
     &.negate {
         background: none;
         color: red - 20;
@@ -101,7 +100,6 @@ nav {
     p {
         margin-right: 2rem;
     }
-
     ul > * {
         display: inline-block;
         list-style: none;
@@ -111,9 +109,10 @@ nav {
         & > a {
             color: white;
             display: block;
+            height: 100%;
             padding: 0.5rem 0;
             width: 100%;
-            height: 100%;
+
             &:hover {
                 background-color: #098ac1 - 20;
             }
@@ -125,14 +124,14 @@ nav {
 img.emoji {
     display: inline;
     margin: 0 2px;
-    max-width: 0.85rem;
     max-height: 0.85rem;
+    max-width: 0.85rem;
 }
 
 .intro {
     font-size: $h2;
-    max-width: 27rem;
     margin: 1rem auto;
+    max-width: 27rem;
 }
 
 .flash {
@@ -142,6 +141,7 @@ img.emoji {
     margin: 1rem auto;
     max-width: 25rem;
     padding: 0.75rem 0;
+
     &.red {
         background-color: red + 80;
     }
@@ -152,6 +152,7 @@ img.emoji {
 
 .search {
     margin-bottom: 0.5rem;
+
     p {
         display: block;
         margin: 1rem 5rem;
@@ -160,14 +161,15 @@ img.emoji {
         border: 1px solid lightgrey;
         display: inline-block;
         font-size: $para;
-        margin-right: 1rem;
         margin-left: 0.2rem;
+        margin-right: 1rem;
         padding: 0.5rem;
     }
 }
 
 .options {
     margin-bottom: 1rem;
+
     ul > * {
         display: inline-block;
         list-style: none;
@@ -193,11 +195,10 @@ img.emoji {
                 max-width: 13%;
             }
         }
-
         .contentDiv {
             float: right;
-            width: 87%;
             text-align: left;
+            width: 87%;
 
             a {
                 &:visited, &:link, &:active {
@@ -223,7 +224,6 @@ img.emoji {
 
             }
         }
-
         .clear {
             clear: both;
         }
@@ -237,25 +237,21 @@ img.emoji {
     display: inline-block;
     margin: 0 1rem;
     margin-bottom: 1rem;
-    padding-top: 0.5rem;
     min-height: 6rem;
+    padding-top: 0.5rem;
     vertical-align: top;
     width: 20rem;
 
     img {
-        width: 5rem;
         height: 5rem;
+        width: 5rem;
     }
-
     .info {
         padding-bottom: 1rem;
-
     }
-
     .feed {
         text-align: left;
     }
-
     a {
         &:visited, &:link, &:active {
             color: black;

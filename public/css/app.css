@@ -6,8 +6,8 @@
     :root {
       font-size: 20px; }
       :root .tweetContainerS {
-        width: 18.5rem;
-        margin: 0.3rem; } }
+        margin: 0.3rem;
+        width: 18.5rem; } }
   @media (max-width: 400px) {
     :root {
       font-size: 15px; }
@@ -45,9 +45,8 @@ button, .button {
   border: 0;
   color: white;
   display: inline-block;
-  width: 100%;
-  height: 100%;
   font-size: 0.7rem;
+  height: 100%;
   margin: 0.3rem 0;
   padding: 0.5rem 0;
   width: 3rem; }
@@ -81,22 +80,22 @@ nav {
     nav ul > * > a {
       color: white;
       display: block;
+      height: 100%;
       padding: 0.5rem 0;
-      width: 100%;
-      height: 100%; }
+      width: 100%; }
       nav ul > * > a:hover {
         background-color: #0076ad; }
 
 img.emoji {
   display: inline;
   margin: 0 2px;
-  max-width: 0.85rem;
-  max-height: 0.85rem; }
+  max-height: 0.85rem;
+  max-width: 0.85rem; }
 
 .intro {
   font-size: 1.2rem;
-  max-width: 27rem;
-  margin: 1rem auto; }
+  margin: 1rem auto;
+  max-width: 27rem; }
 
 .flash {
   background-color: #0080b7;
@@ -119,8 +118,8 @@ img.emoji {
     border: 1px solid lightgrey;
     display: inline-block;
     font-size: 0.7rem;
-    margin-right: 1rem;
     margin-left: 0.2rem;
+    margin-right: 1rem;
     padding: 0.5rem; }
 
 .options {
@@ -144,8 +143,8 @@ img.emoji {
       max-width: 13%; }
     .tweetContainerU .tweet .contentDiv {
       float: right;
-      width: 87%;
-      text-align: left; }
+      text-align: left;
+      width: 87%; }
       .tweetContainerU .tweet .contentDiv a:visited, .tweetContainerU .tweet .contentDiv a:link, .tweetContainerU .tweet .contentDiv a:active {
         color: black; }
       .tweetContainerU .tweet .contentDiv a .tweet {
@@ -170,13 +169,13 @@ img.emoji {
   display: inline-block;
   margin: 0 1rem;
   margin-bottom: 1rem;
-  padding-top: 0.5rem;
   min-height: 6rem;
+  padding-top: 0.5rem;
   vertical-align: top;
   width: 20rem; }
   .tweetContainerS img {
-    width: 5rem;
-    height: 5rem; }
+    height: 5rem;
+    width: 5rem; }
   .tweetContainerS .info {
     padding-bottom: 1rem; }
   .tweetContainerS .feed {
