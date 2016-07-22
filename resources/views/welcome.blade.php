@@ -3,6 +3,7 @@
     <head>
         <title>Zain Zulfiqar - tweek</title>
 
+        {{-- Styles --}}
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,500" rel="stylesheet" type="text/css">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
 

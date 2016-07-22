@@ -12,10 +12,17 @@ $navFont: 0.9rem;
     @media(max-width: 1025px) {
         font-size: 20px;
 
-        .tweetContainer {
-            width: 16rem;
+        .tweetContainerS {
+            width: 18.5rem;
+            margin: 0.3rem;
+        }
+    }
+    @media(max-width: 400px) {
+        font-size: 15px;
+
+        .tweetContainerS {
             box-shadow: none;
-            margin: 0 0.25rem;
+            width: 90%;
         }
     }
 }
@@ -175,28 +182,22 @@ img.emoji {
 
 .tweetContainerU {
     margin: 0 auto;
-    max-width: 30rem;
+    max-width: 35rem;
 
     .tweet {
-        padding: 0.5rem 0;
+        padding: 0.3rem 0;
 
         .imageDiv {
             img {
                 float: left;
-                max-width: 14%;
+                max-width: 13%;
             }
         }
 
         .contentDiv {
             float: right;
-            width: 86%;
+            width: 87%;
             text-align: left;
-
-            .tiny {
-                font-size: 0.48rem;
-                font-weight: 700;
-                padding: 0.25rem 1rem;
-            }
 
             a {
                 &:visited, &:link, &:active {
@@ -204,13 +205,17 @@ img.emoji {
                 }
                 .tweet {
                     background-color: lightgrey + 35;
-                    min-height: 3rem;
+                    min-height: 4rem;
 
                     .text {
                         font-size: $para;
                         padding: 0.3rem 1rem;
                     }
-
+                    .tiny {
+                        font-size: 0.5rem;
+                        font-weight: 700;
+                        padding: 0 1rem;
+                    }
                     &:hover {
                         background-color: lightgrey + 20;
                     }
@@ -242,12 +247,6 @@ img.emoji {
         height: 5rem;
     }
 
-    .tiny {
-        font-size: 0.48rem;
-        font-weight: 700;
-        padding: 0.25rem 1rem;
-    }
-
     .info {
         padding-bottom: 1rem;
 
@@ -269,7 +268,11 @@ img.emoji {
                 font-size: $para;
                 padding: 0.3rem 1rem;
             }
-
+            .tiny {
+                font-size: 0.48rem;
+                font-weight: 700;
+                padding: 0.25rem 1rem;
+            }
             &:hover {
                 background-color: lightgrey + 20;
             }
