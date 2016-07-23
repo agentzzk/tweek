@@ -2,10 +2,12 @@
 
 A Twitter API based application created by Zain Zulfiqar
 
-Make your Twitter feed simpler, by only seeing the tweets you want to see.
-Perfect for following live sports, news, and celebrity events!
+Make your tweet feed much simpler with the help of tweek. No ads. No distractions. See only the tweets you want to see and keep up-to-date with only the information you want.
+
+Perfect for following live sports, news, and real-time events.
 
 ##Technologies
+- Laravel 5.2
 - PHP 7
-- Laravel 5
 - PostgreSQL
+- Twitter API 1.1
