@@ -1,9 +1,10 @@
 /.idea
-/vendor
 /node_modules
 /public/storage
+/public/css/*.map
+/vendor
+
+.env
 Homestead.yaml
 Homestead.json
-.env
-sync-twitAp
-/public/css/*.map
+todo.txt
