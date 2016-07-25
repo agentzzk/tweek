@@ -6,6 +6,8 @@ Make your tweet feed much simpler with the help of tweek. No ads. No distraction
 
 Perfect for following live sports, news, and real-time events.
 
+Hosted under subdomain: http://tweek.zainzulfiqar.com.
+
 ##Technologies
 - Laravel 5.2
 - PHP 7
