@@ -5,10 +5,13 @@ $h3: 0.9rem;
 $navFont: 0.9rem;
 $para: 0.7rem;
 
+@font-face {
+    font-family: 'tweekFont';
+    src: url('fonts/SourceSansPro-Light.ttf');
+}
 :root {
-    font-family: 'Lato', sans-serif;
+    font-family: 'tweekFont';
     font-size: 25px;
-    font-weight: 500;
 
     @media(max-width: 1025px) {
         font-size: 20px;

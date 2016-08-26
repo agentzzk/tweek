@@ -1,7 +1,10 @@
+@font-face {
+  font-family: 'tweekFont';
+  src: url("fonts/SourceSansPro-Light.ttf"); }
+
 :root {
-  font-family: 'Lato', sans-serif;
-  font-size: 25px;
-  font-weight: 500; }
+  font-family: 'tweekFont';
+  font-size: 25px; }
   @media (max-width: 1025px) {
     :root {
       font-size: 20px; }
