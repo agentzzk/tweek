@@ -3,12 +3,8 @@
 namespace App\Http\Controllers;
 
 use Abraham\TwitterOAuth\TwitterOAuth;
-use App\Http\Requests;
-use App\Sub;
-use App\User;
 use Auth;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
 use View;
 
 class UserController extends Controller

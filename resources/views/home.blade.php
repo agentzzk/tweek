@@ -32,7 +32,7 @@
     </ul>
 </nav>
 
-<h1>tweek - focus your tweets</h1>
+<h1>tweek - a Custom Tweet feed</h1>
 
 @if (session('alert'))
     <div class="flash">

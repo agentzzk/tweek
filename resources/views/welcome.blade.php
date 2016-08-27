@@ -15,7 +15,7 @@
     </head>
     <body>
         <nav>
-            <h1>tweek - focus your tweets</h1>
+            <h1>tweek - a Custom Tweet feed</h1>
         </nav>
         <p class="intro">
             Make your tweet feed much simpler with the help of tweek. No ads. No distractions. See only the tweets

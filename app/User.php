@@ -4,7 +4,6 @@ namespace App;
 
 use Auth;
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -68,18 +67,4 @@ class User extends Authenticatable
     public function getUpdate() {
 
     }
-
-    // /**
-    //  * Create a new Twitter API connection
-    //  *
-    //  * @return API connection
-    //  */
-    //
-    // public function makeAPIConnection() {
-    //     define('CONSUMER_KEY', getenv('CONSUMER_KEY'));
-    //     define('CONSUMER_SECRET', getenv('CONSUMER_SECRET'));
-    //     define('OAUTH_CALLBACK', getenv('OAUTH_CALLBACK'));
-    //     $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, session('access_token'), session('access_token_secret'));
-    //     return $connection
-    // }
 }

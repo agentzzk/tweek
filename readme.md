@@ -1,4 +1,4 @@
-# tweek - focus your tweets
+# tweek - a Custom Tweet feed
 
 A Twitter API based application created by Zain Zulfiqar
 

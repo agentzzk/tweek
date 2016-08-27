@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Abraham\TwitterOAuth\TwitterOAuth;
 use Illuminate\Http\Request;
-use App\Http\Requests;
-use App\User;
 use App\Sub;
 use Auth;
 use Carbon\Carbon;
