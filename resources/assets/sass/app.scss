@@ -3,7 +3,8 @@ $h1: 2rem;
 $h2: 1.2rem;
 $h3: 0.9rem;
 $navFont: 0.9rem;
-$para: 0.7rem;
+$para: 0.9rem;
+$tweet: 0.7rem;
 
 @font-face {
     font-family: 'tweekFont';
@@ -40,6 +41,11 @@ h1 {
     font-size: $h1;
     font-weight: 300;
     margin: 1rem 0;
+
+    nav & {
+        margin: 0;
+        padding: 1rem 0;
+    }
 }
 
 h2 {
@@ -60,6 +66,23 @@ p {
 a {
     font-size: $para;
     text-decoration: none;
+}
+
+.buttonLink {
+    color: #098ac1;
+    font-size: $para;
+    font-weight: 700;
+
+    &:hover {
+        color: darken(#098ac1, 10);
+    }
+    &.negate {
+        color: red - 20;
+
+        &:hover {
+            color: red + 50;
+        }
+    }
 }
 
 button, .button {
@@ -98,7 +121,6 @@ nav {
     background-color: #098ac1;
     color: white;
     font-weight: bold;
-    padding: 0.5rem 0;
 
     p {
         margin-right: 2rem;
@@ -113,7 +135,7 @@ nav {
             color: white;
             display: block;
             height: 100%;
-            padding: 0.5rem 0;
+            padding: 1rem 0;
             width: 100%;
 
             &:hover {
@@ -124,17 +146,26 @@ nav {
 
 }
 
-img.emoji {
-    display: inline;
-    margin: 0 2px;
-    max-height: 0.85rem;
-    max-width: 0.85rem;
+img {
+    &.welcome {
+        max-width: 20rem;
+        background: lightgray;
+        padding: 0.125rem;
+        margin-bottom: 1rem;
+    }
+    &.emoji {
+        display: inline;
+        margin: 0 2px;
+        max-height: 0.85rem;
+        max-width: 0.85rem;
+    }
 }
 
 .intro {
-    font-size: $h2;
+    font-size: 1rem;
     margin: 1rem auto;
-    max-width: 27rem;
+    max-width: 26rem;
+    text-align: left;
 }
 
 .flash {
@@ -203,7 +234,7 @@ img.emoji {
             text-align: left;
             width: 87%;
 
-            a {
+            a.tweet {
                 &:visited, &:link, &:active {
                     color: black;
                 }
@@ -212,7 +243,7 @@ img.emoji {
                     min-height: 4rem;
 
                     .text {
-                        font-size: $para;
+                        font-size: $tweet;
                         padding: 0.3rem 1rem;
                     }
                     .tiny {
@@ -255,7 +286,7 @@ img.emoji {
     .feed {
         text-align: left;
     }
-    a {
+    a.tweet {
         &:visited, &:link, &:active {
             color: black;
         }
@@ -264,7 +295,7 @@ img.emoji {
             border-top: 1px solid lightgrey;
 
             .text {
-                font-size: $para;
+                font-size: $tweet;
                 padding: 0.3rem 1rem;
             }
             .tiny {

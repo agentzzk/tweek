@@ -14,8 +14,18 @@
 
     </head>
     <body>
-        <h1>tweek - focus your tweets</h1>
-        <p class="intro">Get live tweet updates from a celebrity, a sports network, or anyone else. Perfect for concentrating your feed to see only what you want to see.</p>
-        <a class="button" href ="login">Sign in</a>
+        <nav>
+            <h1>tweek - focus your tweets</h1>
+        </nav>
+        <p class="intro">
+            Make your tweet feed much simpler with the help of tweek. No ads. No distractions. See only the tweets
+            you want to see and keep up-to-date with only the information you want.
+            <br><br>Perfect for following live sports, news, and real-time events.</p>
+        <a class="buttonLink" href="login">Sign in</a>
+        <h2>Add Twitter handles to follow Users</h2>
+        <img class="welcome" src="images/1.png" alt="Add users by searching">
+        <h2>Choose a unified feed view, or individual card view</h2>
+        <img class="welcome big" src="images/2a.png" alt="Unify view"><br>
+        <img class="welcome big" src="images/2b.png" alt="Card view">
     </body>
 </html>

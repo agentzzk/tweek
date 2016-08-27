@@ -26,6 +26,9 @@ h1 {
   font-size: 2rem;
   font-weight: 300;
   margin: 1rem 0; }
+  nav h1 {
+    margin: 0;
+    padding: 1rem 0; }
 
 h2 {
   font-size: 1.2rem;
@@ -37,18 +40,29 @@ h3 {
   text-decoration: none; }
 
 p {
-  font-size: 0.7rem; }
+  font-size: 0.9rem; }
 
 a {
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   text-decoration: none; }
+
+.buttonLink {
+  color: #098ac1;
+  font-size: 0.9rem;
+  font-weight: 700; }
+  .buttonLink:hover {
+    color: #076790; }
+  .buttonLink.negate {
+    color: #eb0000; }
+    .buttonLink.negate:hover {
+      color: #ff3232; }
 
 button, .button {
   background-color: #32b232;
   border: 0;
   color: white;
   display: inline-block;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   height: 100%;
   margin: 0.3rem 0;
   padding: 0.5rem 0;
@@ -71,8 +85,7 @@ body {
 nav {
   background-color: #098ac1;
   color: white;
-  font-weight: bold;
-  padding: 0.5rem 0; }
+  font-weight: bold; }
   nav p {
     margin-right: 2rem; }
   nav ul > * {
@@ -84,10 +97,16 @@ nav {
       color: white;
       display: block;
       height: 100%;
-      padding: 0.5rem 0;
+      padding: 1rem 0;
       width: 100%; }
       nav ul > * > a:hover {
         background-color: #0076ad; }
+
+img.welcome {
+  max-width: 20rem;
+  background: lightgray;
+  padding: 0.125rem;
+  margin-bottom: 1rem; }
 
 img.emoji {
   display: inline;
@@ -96,9 +115,10 @@ img.emoji {
   max-width: 0.85rem; }
 
 .intro {
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin: 1rem auto;
-  max-width: 27rem; }
+  max-width: 26rem;
+  text-align: left; }
 
 .flash {
   background-color: #0080b7;
@@ -120,7 +140,7 @@ img.emoji {
   .search input[type="text"] {
     border: 1px solid lightgrey;
     display: inline-block;
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     margin-left: 0.2rem;
     margin-right: 1rem;
     padding: 0.5rem; }
@@ -148,19 +168,19 @@ img.emoji {
       float: right;
       text-align: left;
       width: 87%; }
-      .tweetContainerU .tweet .contentDiv a:visited, .tweetContainerU .tweet .contentDiv a:link, .tweetContainerU .tweet .contentDiv a:active {
+      .tweetContainerU .tweet .contentDiv a.tweet:visited, .tweetContainerU .tweet .contentDiv a.tweet:link, .tweetContainerU .tweet .contentDiv a.tweet:active {
         color: black; }
-      .tweetContainerU .tweet .contentDiv a .tweet {
+      .tweetContainerU .tweet .contentDiv a.tweet .tweet {
         background-color: #f6f6f6;
         min-height: 4rem; }
-        .tweetContainerU .tweet .contentDiv a .tweet .text {
+        .tweetContainerU .tweet .contentDiv a.tweet .tweet .text {
           font-size: 0.7rem;
           padding: 0.3rem 1rem; }
-        .tweetContainerU .tweet .contentDiv a .tweet .tiny {
+        .tweetContainerU .tweet .contentDiv a.tweet .tweet .tiny {
           font-size: 0.5rem;
           font-weight: 700;
           padding: 0 1rem; }
-        .tweetContainerU .tweet .contentDiv a .tweet:hover {
+        .tweetContainerU .tweet .contentDiv a.tweet .tweet:hover {
           background-color: #e7e7e7; }
     .tweetContainerU .tweet .clear {
       clear: both; }
@@ -183,19 +203,19 @@ img.emoji {
     padding-bottom: 1rem; }
   .tweetContainerS .feed {
     text-align: left; }
-  .tweetContainerS a:visited, .tweetContainerS a:link, .tweetContainerS a:active {
+  .tweetContainerS a.tweet:visited, .tweetContainerS a.tweet:link, .tweetContainerS a.tweet:active {
     color: black; }
-  .tweetContainerS a .tweet {
+  .tweetContainerS a.tweet .tweet {
     background-color: #f6f6f6;
     border-top: 1px solid lightgrey; }
-    .tweetContainerS a .tweet .text {
+    .tweetContainerS a.tweet .tweet .text {
       font-size: 0.7rem;
       padding: 0.3rem 1rem; }
-    .tweetContainerS a .tweet .tiny {
+    .tweetContainerS a.tweet .tweet .tiny {
       font-size: 0.48rem;
       font-weight: 700;
       padding: 0.25rem 1rem; }
-    .tweetContainerS a .tweet:hover {
+    .tweetContainerS a.tweet .tweet:hover {
       background-color: #e7e7e7; }
 
 /*# sourceMappingURL=app.css.map */
