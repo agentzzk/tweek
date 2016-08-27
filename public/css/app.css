@@ -80,7 +80,8 @@ button, .button {
 
 body {
   background-color: #eaeaea;
-  text-align: center; }
+  text-align: center;
+  margin-bottom: 5rem; }
 
 nav {
   background-color: #098ac1;
@@ -103,10 +104,12 @@ nav {
         background-color: #0076ad; }
 
 img.welcome {
-  max-width: 20rem;
-  background: lightgray;
-  padding: 0.125rem;
-  margin-bottom: 1rem; }
+  max-width: 19rem;
+  border: 0.125rem solid lightgray;
+  margin-top: 1.5rem; }
+
+img.big {
+  max-width: 26rem; }
 
 img.emoji {
   display: inline;

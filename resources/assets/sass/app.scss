@@ -115,6 +115,7 @@ button, .button {
 body {
     background-color: lightgrey + 23;
     text-align: center;
+    margin-bottom: 5rem;
 }
 
 nav {
@@ -148,10 +149,12 @@ nav {
 
 img {
     &.welcome {
-        max-width: 20rem;
-        background: lightgray;
-        padding: 0.125rem;
-        margin-bottom: 1rem;
+        max-width: 19rem;
+        border: 0.125rem solid lightgray;
+        margin-top: 1.5rem;
+    }
+    &.big {
+        max-width: 26rem;
     }
     &.emoji {
         display: inline;

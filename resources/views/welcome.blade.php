@@ -21,11 +21,11 @@
             Make your tweet feed much simpler with the help of tweek. No ads. No distractions. See only the tweets
             you want to see and keep up-to-date with only the information you want.
             <br><br>Perfect for following live sports, news, and real-time events.</p>
-        <a class="buttonLink" href="login">Sign in</a>
-        <h2>Add Twitter handles to follow Users</h2>
+        <a class="buttonLink" href="login"><h2>Sign in</h2></a>
         <img class="welcome" src="images/1.png" alt="Add users by searching">
-        <h2>Choose a unified feed view, or individual card view</h2>
+        <p>Add Twitter handles to follow Users</p>
         <img class="welcome big" src="images/2a.png" alt="Unify view"><br>
         <img class="welcome big" src="images/2b.png" alt="Card view">
+        <p>Choose a unified feed view, or individual card view</p>
     </body>
 </html>
